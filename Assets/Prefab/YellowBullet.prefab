@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4698094338356655760}
   - component: {fileID: 2471142679108975615}
   m_Layer: 0
-  m_Name: BlueBullet
-  m_TagString: BlueBullet
+  m_Name: YellowBullet
+  m_TagString: YellowBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.29, y: 0.431, z: -0.072}
-  m_LocalScale: {x: 0.14431319, y: 0.107844174, z: 0.29457146}
+  m_LocalScale: {x: 0.16172697, y: 0.23789862, z: 0.75096065}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

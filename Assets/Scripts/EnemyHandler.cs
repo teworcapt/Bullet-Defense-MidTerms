@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 using static UnityEngine.GraphicsBuffer;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyHandler : MonoBehaviour
 {
     public Transform player, target;
-    public GameObject redEnemy, blueEnemy, greenEnemy;
+    public GameObject redEnemy, yellowEnemy, greenEnemy;
     public float speed = 1.0f;
+    public int Damage;
 
     void Awake()
     {
@@ -34,16 +36,19 @@ public class EnemyMovement : MonoBehaviour
         if (other.CompareTag("RedBullet") && redEnemy)
         {
             Destroy(other.gameObject);
-            Destroy(redEnemy.gameObject);
-            
-        } else if (other.CompareTag("BlueBullet") && blueEnemy)
+            Destroy(gameObject);
+
+        }
+        else if (other.CompareTag("YellowBullet") && yellowEnemy)
         {
             Destroy(other.gameObject);
-            Destroy(blueEnemy.gameObject);
-        } else if (other.CompareTag("GreenBullet") && greenEnemy)
+            Destroy(gameObject);
+
+        }
+        else if (other.CompareTag("GreenBullet") && greenEnemy)
         {
             Destroy(other.gameObject);
-            Destroy(greenEnemy.gameObject);
+            Destroy(gameObject);
         }
     }
 }
