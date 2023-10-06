@@ -7,19 +7,18 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float moveSpeed;
     public Transform player, target;
+    public GameObject redEnemy, blueEnemy, greenEnemy;
     public float speed = 1.0f;
 
     void Awake()
     {
-        target = player.transform;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = player.transform;
     }
 
     // Update is called once per frame
@@ -30,19 +29,21 @@ public class EnemyMovement : MonoBehaviour
         
 }
 
-    //void LookRotation()
-    //{
-    //    Vector3 relativePos = player.position - transform.position;
-    //    Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-    //    transform.rotation = rotation;
-    //}
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("RedBullet"))
+        if (other.CompareTag("RedBullet") && redEnemy)
         {
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            Destroy(redEnemy.gameObject);
+            
+        } else if (other.CompareTag("BlueBullet") && blueEnemy)
+        {
+            Destroy(other.gameObject);
+            Destroy(blueEnemy.gameObject);
+        } else if (other.CompareTag("GreenBullet") && greenEnemy)
+        {
+            Destroy(other.gameObject);
+            Destroy(greenEnemy.gameObject);
         }
     }
 }

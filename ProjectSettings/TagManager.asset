@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - RedBullet
-  - enemy
+  - Enemy
+  - GreenBullet
+  - BlueBullet
+  - Mobs
   layers:
   - Default
   - TransparentFX
